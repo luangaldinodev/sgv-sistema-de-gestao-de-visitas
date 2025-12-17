@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('endereço', 14)->nullable();
             $table->enum('tipo_familia', ['Unipessoal', 'Familiar']);
             $table->enum('tipo_cadastro', ['Novo', 'Atualização']);
-            $table->string('status_atendimento')->nullable();
-            $table->text('observacoes')->nullable();
+            
+            $table->enum('status_atendimento', ['Aguardando visita', 'Visita agendada', 'Visitado', 'Cadastro atualizado'])
+                    ->default('Aguardando visita');
+            
+                    $table->text('observacoes')->nullable();
             $table->date('data_cadastro')->nullable();
             $table->timestamps();
         });
