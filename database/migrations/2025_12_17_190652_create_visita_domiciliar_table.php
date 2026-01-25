@@ -23,7 +23,7 @@ return new class extends Migration
             $table->date('data_prevista')->nullable();
             $table->date('data_realizada')->nullable();
 
-            $table->enum('status_visita', ['Pendente', 'Realizada', 'Não localizado', 'Reagendar']);
+            $table->enum('status_visita', ['Pendente', 'Realizada', 'Não localizado', 'Reagendar'])->default('Pendente');
 
             $table->text('observacoes')->nullable();
             

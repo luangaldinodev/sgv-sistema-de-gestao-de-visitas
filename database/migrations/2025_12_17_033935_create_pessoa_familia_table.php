@@ -23,7 +23,7 @@ return new class extends Migration
             $table->enum('status_atendimento', ['Aguardando visita', 'Visita agendada', 'Visitado', 'Cadastro atualizado'])
                     ->default('Aguardando visita');
             
-                    $table->text('observacoes')->nullable();
+            $table->text('observacoes')->nullable();
             $table->date('data_cadastro')->nullable();
             $table->timestamps();
         });
