@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\UserRulesMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,3 +10,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
+
+Route::get('/adm', function () {
+    return 'Adm';
+})->middleware(UserRulesMiddleware::class);
