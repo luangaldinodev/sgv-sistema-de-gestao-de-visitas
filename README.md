@@ -1,3 +1,5 @@
+<p align="center"><img src="public/assets/img/logo.png" width="300"></p>
+
 # SGV-CadÚnico
 
 ## Sistema de Gestão de Visitas Domiciliares do CadÚnico
@@ -6,7 +8,6 @@ O **SGV-CadÚnico** é um sistema web desenvolvido para apoiar a organização, 
 
 O sistema foi idealizado a partir de uma necessidade real vivenciada em ambiente público, onde o controle era feito por planilhas compartilhadas em rede, sujeitas a conflitos de acesso, perda de dados e dificuldades logísticas.
 
----
 
 ## 📌 Contexto
 
@@ -14,13 +15,11 @@ Atualmente, unidades de atendimento como o CRAS realizam cadastros e atualizaç�
 
 O SGV-CadÚnico surge como uma solução para **centralizar essas informações em um sistema web**, permitindo acesso simultâneo por múltiplos usuários e garantindo integridade dos dados.
 
----
 
 ## 🎯 Objetivo
 
 Centralizar e organizar o registro e acompanhamento das visitas domiciliares do CadÚnico, substituindo planilhas manuais e oferecendo mais controle, segurança e rastreabilidade das informações.
 
----
 
 ## ⚙️ Funcionalidades (MVP)
 
@@ -33,7 +32,6 @@ Centralizar e organizar o registro e acompanhamento das visitas domiciliares do 
 * Histórico de atendimentos e visitas
 * Listagens com filtros por status, responsável e período
 
----
 
 ## 🔄 Fluxo de uso
 
@@ -43,16 +41,14 @@ Centralizar e organizar o registro e acompanhamento das visitas domiciliares do 
 4. Após a visita, o status é atualizado no sistema
 5. Registro permanece armazenado para consulta futura
 
----
 
 ## 🧱 Tecnologias utilizadas
 
 * **Backend:** PHP com Laravel
 * **Frontend:** Blade + Tailwind CSS
-* **Banco de dados:** MySQL ou PostgreSQL
-* **Autenticação:** Laravel Breeze / Fortify
+* **Banco de dados:** MySQL
+* **Autenticação:** Laravel Fortify
 
----
 
 ## 🏛️ Observação institucional
 
@@ -60,7 +56,6 @@ O SGV-CadÚnico **não é um sistema oficial do Governo Federal**.
 
 Trata-se de um projeto educacional e de portfólio, desenvolvido com base em experiências reais vivenciadas em unidades de atendimento do CadÚnico, com o objetivo de estudo, demonstração técnica e melhoria de processos.
 
----
 
 ## 📚 Finalidade do projeto
 
@@ -69,6 +64,95 @@ Trata-se de um projeto educacional e de portfólio, desenvolvido com base em exp
 * Estudo de modelagem de sistemas públicos
 * Demonstração de resolução de problemas reais
 
+
+## ⚙ Instalação e Rodando localmente
+
+Clone o repositório
+
+```bash
+  git clone https://github.com/luangaldinodev/CRUD-laravel-Galdino.git
+  cd CRUD-laravel-Galdino
+```
+
+Instalar dependências do PHP
+
+```bash
+  composer install
+```
+
+Criar o arquivo .env
+
+```bash
+  cp .env.example .env
+```
+
+Gerar a chave da aplicação
+
+```bash
+  php artisan key:generate
+```
+
+Configurar o banco de dados
+
+```env
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=nome_do_banco
+  DB_USERNAME=usuario
+  DB_PASSWORD=senha
+```
+**Certifique-se de que o banco de dados já exista.**
+
+Rodar as migrations
+
+```bash
+  php artisan migrate
+```
+
+Instalar dependências front-end
+
+```bash
+  npm install
+  npm run dev
+```
+
+Iniciar o servidor
+
+```bash
+  php artisan serve
+```
+
+Acesse:
+
+```bash
+  http://127.0.0.1:8000
+```
+
+## Documentação Técnica
+
+Acesse a rota:
+
+```bash
+  http://127.0.0.1:8000/docs
+```
+
+Aqui você encontrara todas as rotas disponíveis e uma exibição da estrutura das tabelas do banco de dados.
+
+## Referência e Documentações
+
+ - [Laravel Docs](https://laravel.com/docs/12.x)
+ - [AOS Animate On Scroll Library](https://michalsnik.github.io/aos/)
+ - [Tailwind CSS](https://tailwindcss.com/)
+
+
+## Suporte e Feedback
+
+Para suporte, mande um email para luangaldinodev@gmail.com ou entre em meu instagram [@ogaldino.dev](https://www.instagram.com/ogaldino.dev/).
+
+---
+Desenvolvido como projeto de estudo e portfólio.
+
 ---
 
-Desenvolvido como projeto de estudo e portfólio.
+<p align="center"><img src="logo-readme.png" width="800"></p>
