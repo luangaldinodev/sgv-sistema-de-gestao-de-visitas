@@ -46,4 +46,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function visitaDomiciliar(){
+        return $this->belongsTo(VisitaDomiciliar::class);
+    }
 }

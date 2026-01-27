@@ -38,7 +38,7 @@
 
         <div class="grid grid-cols-2 grid-rows-2 gap-3 mt-10">
 
-            <a href="#" class="col-span-2 p-3 text-white font-semibold rounded-lg text-center bg-sky-950"><i class="fa-solid fa-user-plus"></i> Novo Cadastro</a>
+            <a href="{{ route('pessoa.create') }}" class="col-span-2 p-3 text-white font-semibold rounded-lg text-center bg-sky-950"><i class="fa-solid fa-user-plus"></i> Novo Cadastro</a>
             <a href="#" class="col-span-1 p-3 text-sky-950 font-bold rounded-lg text-center bg-neutral-200 border border-neutral-500/20"><i class="fa-solid fa-calendar-days"></i> Agendar</a>
             <a href="#" class="col-span-1 p-3 text-sky-950 font-bold rounded-lg text-center bg-neutral-200 border border-neutral-500/20"><i class="fa-solid fa-list"></i> Ver Todas</a>
 
