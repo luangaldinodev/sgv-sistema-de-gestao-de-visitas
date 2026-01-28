@@ -5,7 +5,7 @@
             <ul class="flex items-center gap-5 text-sky-950 font-semibold">
                 <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
                 <li><a href="{{ route('pessoa.index') }}" class="hover:underline">Pessoas / Familías</a></li>
-                <li><a href="#" class="hover:underline">Visitas</a></li>
+                <li><a href="{{ route('visita.index') }}" class="hover:underline">Visitas</a></li>
                 
             </ul>
         </nav>

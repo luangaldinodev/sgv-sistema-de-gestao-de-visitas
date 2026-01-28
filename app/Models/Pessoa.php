@@ -14,13 +14,14 @@ class Pessoa extends Model
         'telefone',
         'endereço',
         'tipo_familia',
+        'tipo_cadastro',
         'status_atentimento',
         'observacoes',
         'data_cadastro'
     ];
 
 
-    public function visitaDomiciliar(){
-        return $this->hasMany(VisitaDomiciliar::class);
+    public function visita(){
+        return $this->hasMany(VisitaDomiciliar::class, 'pessoa_familia_id');
     }
 }

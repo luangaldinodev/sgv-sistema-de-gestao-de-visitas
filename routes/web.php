@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\VisitaController;
 use App\Http\Middleware\UserRulesMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -13,11 +14,20 @@ Route::get('/home', function () {
 })->middleware(['auth'])->name('home');
 
 Route::controller(PessoaController::class)->group(function () {
-    Route::get('/pessoa', 'index')->name('pessoa.index');
+    Route::get('/pessoa', 'index')->name('pessoa.index')->middleware(['auth']);
     
-    Route::get('/pessoa/create', 'create')->name('pessoa.create');
-    Route::post('/pessoa/store', 'store')->name('pessoa.store');
+    Route::get('/pessoa/create', 'create')->name('pessoa.create')->middleware(['auth']);
+    Route::post('/pessoa/store', 'store')->name('pessoa.store')->middleware(['auth']);
 
+    Route::get('/pessoa/{id}', 'show')->name('pessoa.show')->middleware(['auth']);
+
+})->middleware(['auth']);
+
+Route::controller(VisitaController::class)->group(function () {
+    Route::get('/visita', 'index')->name('visita.index');
+    
+    Route::get('/visita/create', 'create')->name('visita.create');
+    Route::post('/visita/store', 'store')->name('visita.store');
 })->middleware(['auth']);
 
 Route::get('/adm', function () {

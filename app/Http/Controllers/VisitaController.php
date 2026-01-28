@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pessoa;
+use App\Models\User;
+use App\Models\VisitaDomiciliar;
 use Illuminate\Http\Request;
 
-class PessoaController extends Controller
+class VisitaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $pessoas = Pessoa::all();
-        return view('app.pessoa.index', ['pessoas' => $pessoas]);
+        $visitas = VisitaDomiciliar::all();
+        
+        return view('app.visita.index', [
+            'visitas' => $visitas
+        ]);
     }
 
     /**
@@ -21,7 +26,13 @@ class PessoaController extends Controller
      */
     public function create()
     {
-        return view('app.pessoa.create');
+        $users = User::all();
+        $pessoas = Pessoa::all();
+
+        return view('app.visita.create', [
+            'users' => $users,
+            'pessoas' => $pessoas
+        ]);
     }
 
     /**
@@ -29,11 +40,9 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-    
-        Pessoa::create($request->all());
+        VisitaDomiciliar::create($request->all());
 
-        return redirect()->route('pessoa.index');
+        return redirect()->route('visita.index');
     }
 
     /**
@@ -41,13 +50,7 @@ class PessoaController extends Controller
      */
     public function show(string $id)
     {
-        $pessoa = Pessoa::find($id);
-
-        if($pessoa == null){
-            return redirect()->route('pessoa.index');
-        }
-
-        return view('app.pessoa.show', ['pessoa' => $pessoa]);
+        //
     }
 
     /**

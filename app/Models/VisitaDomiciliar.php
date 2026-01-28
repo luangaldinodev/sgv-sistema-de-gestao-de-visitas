@@ -22,6 +22,6 @@ class VisitaDomiciliar extends Model
     }
 
     public function entrevistador(){
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }

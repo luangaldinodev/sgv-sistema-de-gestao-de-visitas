@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
 
     public function visitaDomiciliar(){
-        return $this->belongsTo(VisitaDomiciliar::class);
+        return $this->hasMany(VisitaDomiciliar::class);
     }
 }
