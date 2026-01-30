@@ -55,7 +55,13 @@ class PessoaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $pessoa = Pessoa::find($id);
+
+        if($pessoa == null){
+            return redirect()->route('pessoa.index');
+        }
+
+        return view('app.pessoa.edit', ['pessoa' => $pessoa]);
     }
 
     /**
