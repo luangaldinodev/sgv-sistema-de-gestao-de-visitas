@@ -144,20 +144,31 @@
 
                 <div class="col-span-4">
                     <div class="flex items-center gap-3 mb-1">
-                        {!! $errors->has('observacoes') ? "<p class='text-sm text-red-700'>*" . $errors->first('observacoes') . '</p>' : '' !!}
+                        {!! $errors->has('observacoes')
+                            ? "<p class='text-sm text-red-700'>*" . $errors->first('observacoes') . '</p>'
+                            : '' !!}
                     </div>
-                    <textarea name="observacoes" id="observacoes" placeholder="Descreva informações relevantes sobre a visita domiciliar ou situação da familía..." cols="30" rows="5" class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500"></textarea>
+                    <textarea name="observacoes" id="observacoes"
+                        placeholder="Descreva informações relevantes sobre a visita domiciliar ou situação da familía..." cols="30"
+                        rows="5"
+                        class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500"></textarea>
                 </div>
 
                 <div class="col-start-3 col-end-3 flex items-end justify-end w-full">
-                    <button type="reset" class="py-3 text-right mr-5 font-semibold text-sky-950  cursor-pointer"></i>Cancelar</button>
+                    <button type="reset"
+                        class="py-3 text-right mr-5 font-semibold text-sky-950  cursor-pointer"></i>Cancelar</button>
                 </div>
 
                 <div class="col-start-4 col-end-4">
-                    <button type="submit" class="w-full py-3  font-semibold text-white rounded-sm cursor-pointer bg-emerald-500"><i class="fa-solid fa-floppy-disk mr-3"></i>Salvar cadastro</button>
+                    <button type="submit"
+                        class="w-full py-3  font-semibold text-white rounded-sm cursor-pointer bg-emerald-500"><i
+                            class="fa-solid fa-floppy-disk mr-3"></i>Salvar cadastro</button>
                 </div>
 
             </form>
         </section>
     </div>
+
+    @include('app._components.footer')
+
 @endsection

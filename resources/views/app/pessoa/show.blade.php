@@ -157,4 +157,7 @@
         </section>
 
     </div>
+
+    @include('app._components.footer')
+
 @endsection
