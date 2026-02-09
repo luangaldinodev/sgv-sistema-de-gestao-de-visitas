@@ -50,7 +50,13 @@ class VisitaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $visita = VisitaDomiciliar::find($id);
+
+        if($visita == null){
+            return redirect()->route('visita.index');
+        }
+
+        return view('app.visita.show', ['visita' => $visita]);
     }
 
     /**

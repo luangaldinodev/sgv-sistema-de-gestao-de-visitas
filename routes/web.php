@@ -30,6 +30,9 @@ Route::controller(VisitaController::class)->group(function () {
     
     Route::get('/visita/create', 'create')->name('visita.create');
     Route::post('/visita/store', 'store')->name('visita.store');
+
+    Route::get('/visita/{id}', 'show')->name('visita.show');
+
 })->middleware(['auth']);
 
 Route::get('/adm', function () {

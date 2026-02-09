@@ -86,7 +86,7 @@
 
                             <td class="py-4 border-b text-center border-neutral-500/30">
                                 {{ \Carbon\Carbon::parse($pessoa->data_cadastro)->format('d/m/Y') }}</td>
-
+                                
                             <td class="text-center font-semibold border-b border-neutral-500/30">
                                 <div class="flex items-center gap-3 justify-center">
                                     <a href="{{ route('pessoa.show', [$pessoa->id]) }}"

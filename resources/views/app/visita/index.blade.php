@@ -74,7 +74,7 @@
 
                             <td class="text-center font-semibold border-b border-neutral-500/30">
                                 <div class="flex items-center gap-3 justify-center">
-                                    {{-- <a href="{{ route('pessoa.show', ['']) }}" class="text-sky-950 hover:text-sky-500"><i class="fa-solid fa-eye"></i></a> --}}
+                                    <a href="{{ route('visita.show', [$visita->id]) }}" class="text-sky-950 hover:text-sky-500"><i class="fa-solid fa-eye"></i></a>
                                     <a href="#" class="text-sky-950 hover:text-sky-500"><i
                                             class="fa-solid fa-pen-to-square"></i></a>
                                     <a href="#" class="text-sky-950 hover:text-sky-500"><i

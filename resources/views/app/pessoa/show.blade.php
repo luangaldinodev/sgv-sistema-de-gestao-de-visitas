@@ -132,7 +132,7 @@
                                         {{ \Carbon\Carbon::parse($visitas->data_prevista)->format('d/m/Y') }}</p>
                                 </div>
                                 <p
-                                    class="mb-1 font-extrabold text-lg flex items-center gap-1 rounded-full uppercase {{ $visitas->status_visita == 'Pendente' ? 'text-amber-500' : ($visitas->status_visita == 'Realizada' ? 'text-green-600' : ($visitas->status_visita == 'Reagendar' ? 'text-purple-700' : ($visitas->status_visita == 'Não localizado' ? 'text-red-700' : ''))) }}">
+                                    class="mb-1 font-bold text-lg flex items-center gap-1 rounded-full uppercase {{ $visitas->status_visita == 'Pendente' ? 'text-amber-500' : ($visitas->status_visita == 'Realizada' ? 'text-green-600' : ($visitas->status_visita == 'Reagendar' ? 'text-purple-700' : ($visitas->status_visita == 'Não localizado' ? 'text-red-700' : ''))) }}">
                                     {!! $visitas->status_visita == 'Pendente'
                                         ? '<i class="fa-solid fa-clock-rotate-left"></i>'
                                         : ($visitas->status_visita == 'Realizada'
