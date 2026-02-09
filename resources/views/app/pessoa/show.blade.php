@@ -37,7 +37,7 @@
                         </h3>
 
                         <div
-                            class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-neutral-50 border-x border-b border-neutral-500/30 rounded-b-lg">
+                            class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-white border-x border-b border-neutral-500/30 rounded-b-lg">
 
                             <div class="col-span-4">
                                 <p class="uppercase text-sm mb-1 text-neutral-600 font-semibold">Responsável pela unidade
@@ -122,7 +122,7 @@
                     </h3>
 
                     <div
-                        class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-neutral-50 border-x border-b border-neutral-500/30 rounded-b-lg">
+                        class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-white border-x border-b border-neutral-500/30 rounded-b-lg">
                         
                         @foreach ($pessoa->visita as $visitas)
                             <div class="col-span-4 border-b border-neutral-500/30 pb-3">
