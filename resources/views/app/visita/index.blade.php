@@ -33,9 +33,11 @@
                         <th
                             class="py-4 uppercase text-sm text-center text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
                             Status</th>
-                        <th class="py-4 uppercase text-sm text-center text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
+                        <th
+                            class="py-4 uppercase text-sm text-center text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
                             Data prevista</th>
-                        <th class="py-4 uppercase text-sm text-center text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
+                        <th
+                            class="py-4 uppercase text-sm text-center text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
                             Data de visita</th>
                         <th
                             class="pr-4 py-4 text-center uppercase text-sm text-neutral-600 border-b border-neutral-500/30 bg-neutral-100 rounded-tr-lg">
@@ -70,13 +72,17 @@
                                 {{ \Carbon\Carbon::parse($visita->data_prevista)->format('d/m/Y') }}</td>
 
                             <td class="py-4 text-center border-b border-neutral-500/30">
-                                {{ \Carbon\Carbon::parse($visita->data_realizada)->format('d/m/Y') }}</td>
+                                @if ($visita->data_realizada)
+                                    {{ \Carbon\Carbon::parse($visita->data_realizada)->format('d/m/Y') }}
+                                @endif
+                            </td>
 
                             <td class="text-center font-semibold border-b border-neutral-500/30">
                                 <div class="flex items-center gap-3 justify-center">
-                                    <a href="{{ route('visita.show', [$visita->id]) }}" class="text-sky-950 hover:text-sky-500"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="{{ route('visita.show', [$visita->id]) }}"
+                                        class="text-sky-950 hover:text-sky-500"><i class="fa-solid fa-eye"></i></a>
                                     @if (auth()->user()?->perfil == 2)
-                                        <a href="{{ route('visita.show', [$visita->id]) }}"
+                                        <a href="{{ route('visita.edit', [$visita->id]) }}"
                                             class="text-sky-950 hover:text-sky-500"><i
                                                 class="fa-solid fa-pen-to-square"></i></a>
                                     @endif

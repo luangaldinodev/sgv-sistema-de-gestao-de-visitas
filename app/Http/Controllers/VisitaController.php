@@ -15,7 +15,7 @@ class VisitaController extends Controller
     public function index()
     {
         $visitas = VisitaDomiciliar::all();
-        
+
         return view('app.visita.index', [
             'visitas' => $visitas
         ]);
@@ -52,7 +52,7 @@ class VisitaController extends Controller
     {
         $visita = VisitaDomiciliar::find($id);
 
-        if($visita == null){
+        if ($visita == null) {
             return redirect()->route('visita.index');
         }
 
@@ -64,7 +64,19 @@ class VisitaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $visita = VisitaDomiciliar::find($id);
+        $users = User::orderBy('name', 'asc')->get();
+        $pessoas = Pessoa::orderBy('nome_completo', 'asc')->get();
+
+        if ($visita == null) {
+            return redirect()->route('visita.index');
+        }
+
+        return view('app.visita.edit', [
+            'visita' => $visita,
+            'users' => $users,
+            'pessoas' => $pessoas
+        ]);
     }
 
     /**

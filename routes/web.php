@@ -23,7 +23,7 @@ Route::controller(PessoaController::class)->group(function () {
 
     Route::get('/pessoa/{id}/edit', 'edit')->name('pessoa.edit')->middleware(['auth', UserRulesMiddleware::class]);
 
-})->middleware(['auth']);
+});
 
 Route::controller(VisitaController::class)->group(function () {
     Route::get('/visita', 'index')->name('visita.index');
@@ -32,9 +32,8 @@ Route::controller(VisitaController::class)->group(function () {
     Route::post('/visita/store', 'store')->name('visita.store');
 
     Route::get('/visita/{id}', 'show')->name('visita.show');
+    
+    Route::get('/visita/{id}/edit', 'edit')->name('visita.edit')->middleware(['auth', UserRulesMiddleware::class]);
 
-})->middleware(['auth']);
+});
 
-Route::get('/adm', function () {
-    return 'Adm';
-})->middleware(UserRulesMiddleware::class);
