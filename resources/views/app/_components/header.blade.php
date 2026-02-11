@@ -1,6 +1,6 @@
 <div class="shadow-lg bg-white">
     <header class="w-7xl mx-auto flex items-center justify-between py-2">
-        <a href="{{ route('home') }}"><img src="/assets/img/logo.png" alt="Logo SGV CadÚnico" class="w-20"></a>
+        <a href="{{ route('home') }}"><img src="/assets/img/logo.png" alt="Logo SGV CadÚnico" class="w-30"></a>
         <nav>
             <ul class="flex items-center gap-5 text-sky-950 font-semibold">
                 <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>

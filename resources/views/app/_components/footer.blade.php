@@ -21,7 +21,7 @@
                             rel="noopener noreferrer">sgvcadunico</a></li>
                 </ul>
             </nav>
-            <p class="text-center text-sky-950 font-semibold text-lg mb-2 mt-6">&copy; Sistema de Gestão de Visitas CadÚnico • Todos os
+            <p class="text-center text-sky-950 font-semibold text-lg mb-2 mt-6">&copy; SGV - Sistema de Gestão de Visitas • Todos os
                 direitos reservados.</p>
             <p class="text-center text-sky-950 text-md pb-8">Feito com ❤ por Luan Galdino | G2A Digital -
                 Marketing & Software</p>
