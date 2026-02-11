@@ -6,11 +6,11 @@
 
     @include('app._components.header')
     <div class="">
-        <section class="w-5xl mx-auto bg-white mt-10 py-6 px-8 rounded-lg">
+        <section class="w-5xl mx-auto bg-white my-10 py-6 px-8 rounded-lg">
             <h2 class="text-sky-950 font-bold text-4xl">Cadastrar Pessoa</h2>
 
             <form action="{{ route('pessoa.store') }}" method="post"
-                class="grid grid-cols-4 gap-3 p-6 border border-neutral-500/20 rounded-lg mt-10">
+                class="grid grid-cols-4 gap-3 p-6 border border-neutral-500/20 rounded-lg my-10">
                 @csrf
 
                 <h3 class="text-sky-950 font-bold text-2xl col-start-1 col-end-4"><i
@@ -24,7 +24,7 @@
                             ? "<p class='text-sm text-red-700'>*" . $errors->first('nome_completo') . '</p>'
                             : '' !!}
                     </div>
-                    <input type="text" name="nome_completo" id="nome_completo" placeholder="Nome completo do cidadão"
+                    <input type="text" name="nome_completo" id="nome_completo" placeholder="Nome completo do cidadão" value="{{ old('nome_completo') }}"
                         class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
@@ -34,8 +34,8 @@
                             CPF</label>
                         {!! $errors->has('cpf') ? "<p class='text-sm text-red-700'>*" . $errors->first('cpf') . '</p>' : '' !!}
                     </div>
-                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00"
-                        class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
+                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" value="{{ old('cpf') }}"
+                        class="cpf mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
                 <div class="col-start-1 col-end-2">
@@ -44,7 +44,7 @@
                             Telefone</label>
                         {!! $errors->has('telefone') ? "<p class='text-sm text-red-700'>*" . $errors->first('telefone') . '</p>' : '' !!}
                     </div>
-                    <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000"
+                    <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" value="{{ old('telefone') }}"
                         class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
@@ -56,7 +56,7 @@
                             ? "<p class='text-sm text-red-700'>*" . $errors->first('data_cadastro') . '</p>'
                             : '' !!}
                     </div>
-                    <input type="date" name="data_cadastro" id="data_cadastro" placeholder="(00) 00000-0000"
+                    <input type="date" name="data_cadastro" id="data_cadastro" placeholder="(00) 00000-0000" value="{{ old('data_cadastro') }}"
                         class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
@@ -66,7 +66,7 @@
                             Endereço Completo</label>
                         {!! $errors->has('endereço') ? "<p class='text-sm text-red-700'>*" . $errors->first('endereço') . '</p>' : '' !!}
                     </div>
-                    <input type="text" name="endereço" id="endereço" placeholder="Rua, número, bairro"
+                    <input type="text" name="endereço" id="endereço" placeholder="Rua, número, bairro" value="{{ old('endereço') }}"
                         class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
@@ -84,7 +84,7 @@
                     <div class="flex gap-4">
                         <label for="familia_unipessoal" class="flex-1 cursor-pointer">
                             <input type="radio" name="tipo_familia" id="familia_unipessoal" value="Unipessoal"
-                                class="hidden peer" checked>
+                                class="hidden peer" {{ old('tipo_familia') == 'Unipessoal' ? 'checked' : (old('tipo_familia') == null ? 'checked' : '')}}>
                             <div
                                 class="flex items-center justify-center h-12 border-2 border-neutral-300 rounded-lg
                    peer-checked:border-sky-500 peer-checked:bg-sky-50
@@ -95,7 +95,7 @@
 
                         <label for="familia_familiar" class="flex-1 cursor-pointer">
                             <input type="radio" name="tipo_familia" id="familia_familiar" value="Familiar"
-                                class="hidden peer">
+                                class="hidden peer" {{ old('tipo_familia') == 'Familiar' ? 'checked' : ''}}>
                             <div
                                 class="flex items-center justify-center h-12 border-2 border-neutral-300 rounded-lg
                    peer-checked:border-sky-500 peer-checked:bg-sky-50
@@ -117,7 +117,7 @@
                     <div class="flex gap-4">
                         <label for="cadastro_novo" class="flex-1 cursor-pointer">
                             <input type="radio" name="tipo_cadastro" id="cadastro_novo" value="Novo" class="hidden peer"
-                                checked>
+                                {{ old('tipo_cadastro') == 'Novo' ? 'checked' : (old('tipo_cadastro') == null ? 'checked' : '')}}>
                             <div
                                 class="flex items-center justify-center h-12 border-2 border-neutral-300 rounded-lg
                    peer-checked:border-sky-500 peer-checked:bg-sky-50
@@ -128,7 +128,7 @@
 
                         <label for="cadastro_atualizacao" class="flex-1 cursor-pointer">
                             <input type="radio" name="tipo_cadastro" id="cadastro_atualizacao" value="Atualização"
-                                class="hidden peer">
+                                class="hidden peer" {{ old('tipo_cadastro') == 'Atualização' ? 'checked' : ''}}>
                             <div
                                 class="flex items-center justify-center h-12 border-2 border-neutral-300 rounded-lg
                    peer-checked:border-sky-500 peer-checked:bg-sky-50

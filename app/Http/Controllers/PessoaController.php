@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePessoaRequest;
 use App\Models\Pessoa;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        $pessoas = Pessoa::all();
+        $pessoas = Pessoa::orderBy('nome_completo', 'asc')->get();
         return view('app.pessoa.index', ['pessoas' => $pessoas]);
     }
 
@@ -27,12 +28,9 @@ class PessoaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePessoaRequest $request)
     {
-        // dd($request->all());
-    
-        Pessoa::create($request->all());
-
+        Pessoa::create($request->validated());
         return redirect()->route('pessoa.index');
     }
 
