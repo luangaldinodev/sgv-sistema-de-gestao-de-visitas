@@ -21,6 +21,21 @@
 
     {{-- Menu DropDown Header --}}
     <script>
+        function confirmarExclusao() {
+            swal({
+                    title: "Você tem certeza?",
+                    text: "Uma vez apagado, você não poderá recuperar esse registro!",
+                    icon: "warning",
+                    buttons: ["Cancelar", true],
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        document.getElementById('formDelete').submit();
+                    } 
+                });
+        }
+
         function menuDropDown() {
 
             const menuDropDown = document.getElementById('menuDropDown');

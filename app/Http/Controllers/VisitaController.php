@@ -101,6 +101,7 @@ class VisitaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $visita = VisitaDomiciliar::find($id)->delete();
+        return redirect()->route('visita.index');
     }
 }

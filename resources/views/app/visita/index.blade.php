@@ -85,6 +85,16 @@
                                         <a href="{{ route('visita.edit', [$visita->id]) }}"
                                             class="text-sky-950 hover:text-sky-500"><i
                                                 class="fa-solid fa-pen-to-square"></i></a>
+
+                                        <form id="formDelete" action="{{ route('visita.destroy', [$visita->id]) }}" method="post"
+                                            class="hidden">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
+                                        <button onclick="confirmarExclusao()"
+                                            class="text-sky-950 hover:text-red-500 cursor-pointer"><i
+                                                class="fa-solid fa-trash"></i></button>
+
                                     @endif
                                 </div>
                             </td>

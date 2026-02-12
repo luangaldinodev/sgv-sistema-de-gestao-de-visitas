@@ -36,7 +36,7 @@
                         {!! $errors->has('cpf') ? "<p class='text-sm text-red-700'>*" . $errors->first('cpf') . '</p>' : '' !!}
                     </div>
                     <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" value="{{ $pessoa->cpf }}"
-                        class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
+                        class="cpf mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
                 <div class="col-start-1 col-end-2">
@@ -46,7 +46,7 @@
                         {!! $errors->has('telefone') ? "<p class='text-sm text-red-700'>*" . $errors->first('telefone') . '</p>' : '' !!}
                     </div>
                     <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" value="{{ $pessoa->telefone }}"
-                        class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
+                        class="telefone mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
                 </div>
 
                 <div class="col-start-2 col-end-3">

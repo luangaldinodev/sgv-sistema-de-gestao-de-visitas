@@ -37,6 +37,8 @@ Route::controller(VisitaController::class)->group(function () {
     Route::get('/visita/{id}/edit', 'edit')->name('visita.edit')->middleware(['auth', UserRulesMiddleware::class]);
     Route::put('/visita/{id}', 'update')->name('visita.update')->middleware(['auth', UserRulesMiddleware::class]);
 
+    Route::delete('/visita/{id}', 'destroy')->name('visita.destroy')->middleware(['auth', UserRulesMiddleware::class]);
+
 
 });
 

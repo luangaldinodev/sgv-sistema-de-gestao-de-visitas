@@ -26,6 +26,8 @@ return new class extends Migration
             $table->enum('status_visita', ['Pendente', 'Realizada', 'Não localizado', 'Reagendar'])->default('Pendente');
 
             $table->text('observacoes')->nullable();
+
+            $table->softDeletes();
             
             $table->timestamps();
         });

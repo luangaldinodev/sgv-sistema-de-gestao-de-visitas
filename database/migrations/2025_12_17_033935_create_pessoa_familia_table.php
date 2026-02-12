@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nome_completo', 150);
             $table->string('cpf', 14)->unique();
-            $table->string('telefone', 14)->nullable();
-            $table->string('endereço', 14)->nullable();
+            $table->string('telefone', 16)->nullable();
+            $table->string('endereço')->nullable();
             $table->enum('tipo_familia', ['Unipessoal', 'Familiar']);
             $table->enum('tipo_cadastro', ['Novo', 'Atualização']);
             
