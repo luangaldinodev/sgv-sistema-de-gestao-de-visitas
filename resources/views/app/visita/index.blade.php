@@ -18,7 +18,7 @@
 
                 <a href="{{ route('visita.create') }}"
                     class="py-3 px-5 font-semibold text-white rounded-sm cursor-pointer bg-emerald-500 shadow-lg shadow-emerald-200"><i
-                        class="fa-solid fa-user-plus mr-2"></i> Nova Visita</a>
+                        class="fa-solid fa-door-open mr-2"></i> Nova Visita</a>
 
             </div>
 

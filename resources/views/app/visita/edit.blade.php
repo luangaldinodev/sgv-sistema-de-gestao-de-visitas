@@ -9,9 +9,10 @@
         <section class="w-5xl mx-auto bg-white my-10 py-6 px-8 rounded-lg">
             <h2 class="text-sky-950 font-bold text-4xl">Cadastrar Visita</h2>
 
-            <form action="{{ route('visita.store') }}" method="post"
+            <form action="{{ route('visita.update', ['id' => $visita->id]) }}" method="post"
                 class="grid grid-cols-4 gap-3 p-6 border border-neutral-500/20 rounded-lg my-10">
                 @csrf
+                @method('put')
 
                 <h3 class="text-sky-950 font-bold text-2xl col-start-1 col-end-4"><i
                         class="fa-solid fa-user text-sky-500"></i> Dados da Visita</h3>

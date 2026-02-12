@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreVisitaRequest;
+use App\Http\Requests\UpdateVisitaRequest;
 use App\Models\Pessoa;
 use App\Models\User;
 use App\Models\VisitaDomiciliar;
@@ -38,11 +40,10 @@ class VisitaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreVisitaRequest $request)
     {
-        VisitaDomiciliar::create($request->all());
-
-        return redirect()->route('visita.index');
+        $visita = VisitaDomiciliar::create($request->validated());
+        return redirect()->route('visita.show', ['id' => $visita]);
     }
 
     /**
@@ -82,9 +83,17 @@ class VisitaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateVisitaRequest $request, string $id)
     {
-        //
+        $visita = VisitaDomiciliar::find($id);
+        
+        if($visita == null){
+            return redirect()->route('visita.index');
+        }
+
+        $visita->update($request->validated());
+
+        return redirect()->route('visita.show', ['id' => $id]);
     }
 
     /**

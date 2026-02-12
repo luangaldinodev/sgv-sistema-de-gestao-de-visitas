@@ -12,12 +12,13 @@
             <div class="mt-10 flex items-center justify-between">
                 <div>
                     <h2 class="text-sky-950 font-bold text-4xl">Detalhes da Visita</h2>
+                    <p class="text-neutral-600 font-semibold"><a href="{{ route('visita.index') }}" class="hover:underline">visitas</a> / detalhes da visita</p>
                 </div>
 
                 <div class="flex items-center gap-6">
                     <a href="{{ route('visita.create') }}"
                         class="py-3 px-5 font-semibold text-white rounded-sm cursor-pointer bg-emerald-500 shadow-lg shadow-emerald-200"><i
-                            class="fa-solid fa-user-plus mr-2"></i> Nova Pessoa</a>
+                            class="fa-solid fa-door-open mr-2"></i> Nova Visita</a>
 
                     <a href="{{ route('pessoa.create') }}"
                         class="py-3 px-5 font-semibold border border-neutral-500/30 text-sky-950 rounded-sm cursor-pointer bg-white"><i
@@ -93,6 +94,12 @@
 
                     <div class="grid grid-cols-4 gap-6 border-x border-b border-neutral-500/30 rounded-b-lg p-6">
 
+                        <div>
+                            <a href="{{ route('visita.edit', [$visita->id]) }}"
+                                class="py-2 px-4 font-semibold text-sky-500 text-sm rounded-sm cursor-pointer border border-sky-500 hover:shadow-lg hover:shadow-sky-100 transition-all ease-in-out"><i
+                                    class="fa-solid fa-pen mr-2"></i>Editar Visita</a>
+                        </div>
+
                         <div class="col-start-1 col-end-3 flex items-center gap-3">
                             <div class="bg-neutral-100 text-sky-500 text-2xl p-2 rounded-lg">
                                 <i class="fa-solid fa-calendar "></i>
@@ -128,8 +135,7 @@
 
                         <div class="col-span-4">
                             <p class="uppercase text-sm text-neutral-600 font-semibold mb-1">Observações</p>
-                            <div
-                                class="bg-neutral-100 px-6 py-4 rounded-lg border-2 border-dashed border-neutral-500/30">
+                            <div class="bg-neutral-100 px-6 py-4 rounded-lg border-2 border-dashed border-neutral-500/30">
                                 <p class=" font-bold">{{ $visita->observacoes }}</p>
                             </div>
                         </div>

@@ -35,6 +35,8 @@ Route::controller(VisitaController::class)->group(function () {
     Route::get('/visita/{id}', 'show')->name('visita.show');
     
     Route::get('/visita/{id}/edit', 'edit')->name('visita.edit')->middleware(['auth', UserRulesMiddleware::class]);
+    Route::put('/visita/{id}', 'update')->name('visita.update')->middleware(['auth', UserRulesMiddleware::class]);
+
 
 });
 
