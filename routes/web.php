@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PessoaController;
 use App\Http\Controllers\VisitaController;
 use App\Http\Middleware\UserRulesMiddleware;
@@ -9,9 +10,7 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware(['auth'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->middleware(['auth'])->name('home');
 
 Route::controller(PessoaController::class)->group(function () {
     Route::get('/pessoa', 'index')->name('pessoa.index')->middleware(['auth']);

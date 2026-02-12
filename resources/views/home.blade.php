@@ -11,27 +11,27 @@
             <div class="grid grid-cols-2 grid-rows-2 gap-3 mt-10">
 
                 <div class="col-span-1 bg-white p-6 rounded-lg flex flex-col gap-2 shadow-md">
-                    <i class="fa-solid fa-clock text-xl text-neutral-500"></i>
-                    <h2 class="text-lg font-semibold uppercase text-neutral-500">Aguardando Visita</h2>
-                    <p class="text-sky-950 font-bold text-4xl">152</p>
+                    <i class="fa-solid fa-clock text-xl text-amber-500"></i>
+                    <h2 class="text-lg font-semibold uppercase text-neutral-500">Visitas Pendetes</h2>
+                    <p class="text-sky-950 font-bold text-4xl">{{ $visitasPendentes }}</p>
                 </div>
 
                 <div class="col-span-1 bg-white p-6 rounded-lg flex flex-col gap-2 shadow-md">
-                    <i class="fa-solid fa-calendar-days text-neutral-500"></i>
-                    <h2 class="text-lg font-semibold uppercase text-neutral-500">Agendadas</h2>
-                    <p class="text-sky-950 font-bold text-4xl">43</p>
-                </div>
-
-                <div class="col-span-1 bg-white p-6 rounded-lg flex flex-col gap-2 shadow-md">
-                    <i class="fa-regular fa-calendar-check text-neutral-500"></i>
+                    <i class="fa-regular fa-calendar-check text-green-600"></i>
                     <h2 class="text-lg font-semibold uppercase text-neutral-500">Realizadas</h2>
-                    <p class="text-sky-950 font-bold text-4xl">43</p>
+                    <p class="text-sky-950 font-bold text-4xl">{{ $visitasRealizadas }}</p>
                 </div>
 
                 <div class="col-span-1 bg-white p-6 rounded-lg flex flex-col gap-2 shadow-md">
-                    <i class="fa-solid fa-circle-check text-neutral-500"></i>
-                    <h2 class="text-lg font-semibold uppercase text-neutral-500">Finalizadas</h2>
-                    <p class="text-sky-950 font-bold text-4xl">300</p>
+                    <i class="fa-solid fa-calendar-days text-red-600"></i>
+                    <h2 class="text-lg font-semibold uppercase text-neutral-500">Não Localizados</h2>
+                    <p class="text-sky-950 font-bold text-4xl">{{ $visitasNaoLocalizados }}</p>
+                </div>
+
+                <div class="col-span-1 bg-white p-6 rounded-lg flex flex-col gap-2 shadow-md">
+                    <i class="fa-solid fa-user text-sky-500"></i>
+                    <h2 class="text-lg font-semibold uppercase text-neutral-500">Total de Pessoas Cadastradas</h2>
+                    <p class="text-sky-950 font-bold text-4xl">{{ $totalPessoas }}</p>
                 </div>
 
             </div>
