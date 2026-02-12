@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePessoaRequest;
 use App\Http\Requests\UpdatePessoaRequest;
 use App\Models\Pessoa;
-use App\Services\UserService;
+use App\Services\PessoaService;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class PessoaController extends Controller
@@ -13,9 +14,9 @@ class PessoaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request, UserService $user)
+    public function index(Request $request, PessoaService $pessoa)
     {
-        return $user->UserQueryIndex($request);
+        return $pessoa->pessoaQueryIndex($request);
     }
 
     /**
@@ -74,8 +75,6 @@ class PessoaController extends Controller
             return redirect()->route('pessoa.index');
         }
 
-        // dd($request);
-
         $pessoa->update($request->validated());
 
         return redirect()->route('pessoa.show', ['id' => $id]);
@@ -87,5 +86,10 @@ class PessoaController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function exportarPdf(string $id, PessoaService $pessoa)
+    {
+        return $pessoa->pessoaExportarPdf($id);
     }
 }

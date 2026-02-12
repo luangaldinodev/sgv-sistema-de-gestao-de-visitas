@@ -20,9 +20,9 @@
                         class="py-3 px-5 font-semibold text-white rounded-sm cursor-pointer bg-emerald-500 shadow-lg shadow-emerald-200"><i
                             class="fa-solid fa-door-open mr-2"></i> Nova Visita</a>
 
-                    <a href="{{ route('pessoa.create') }}"
+                    {{-- <a href="{{ route('pessoa.create') }}"
                         class="py-3 px-5 font-semibold border border-neutral-500/30 text-sky-950 rounded-sm cursor-pointer bg-white"><i
-                            class="fa-solid fa-print mr-2"></i> Imprimir Ficha</a>
+                            class="fa-solid fa-print mr-2"></i> Imprimir Ficha</a> --}}
                 </div>
             </div>
 

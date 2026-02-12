@@ -19,6 +19,7 @@ Route::controller(PessoaController::class)->group(function () {
     Route::post('/pessoa/store', 'store')->name('pessoa.store')->middleware(['auth']);
 
     Route::get('/pessoa/{id}', 'show')->name('pessoa.show')->middleware(['auth']);
+    Route::get('/pessoa/exportar/{id}', 'exportarPdf')->name('pessoa.exportar')->middleware(['auth']);
 
     Route::get('/pessoa/{id}/edit', 'edit')->name('pessoa.edit')->middleware(['auth', UserRulesMiddleware::class]);
     Route::put('/pessoa/{id}', 'update')->name('pessoa.update')->middleware(['auth', UserRulesMiddleware::class]);

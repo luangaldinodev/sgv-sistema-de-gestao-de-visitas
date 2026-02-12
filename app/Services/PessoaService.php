@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\Models\Pessoa;
+use Barryvdh\DomPDF\Facade\Pdf;
 
-class UserService
+class PessoaService
 {
     /**
      * Create a new class instance.
@@ -14,7 +15,7 @@ class UserService
         //
     }
 
-    public function UserQueryIndex($request)
+    public function pessoaQueryIndex($request)
     {
         $nomeCompleto = $request->get('nome_completo');
         $cpf = $request->get('cpf');
@@ -36,5 +37,20 @@ class UserService
 
         $pessoas = Pessoa::orderBy('nome_completo', 'asc')->get();
         return view('app.pessoa.index', ['pessoas' => $pessoas]);
+    }
+
+    public function pessoaExportarPdf(string $id)
+    {
+        $pessoa = Pessoa::find($id);
+
+        if ($pessoa == null) {
+            return redirect()->route('pessoa.index');
+        }
+
+        $pdf = Pdf::loadView('app.pessoa.pdf.show', ['pessoa' => $pessoa]);
+
+        $nomePdf = $pessoa->nome_completo . ' - ' . $pessoa->cpf;
+
+        return $pdf->download("$nomePdf.pdf");
     }
 }
