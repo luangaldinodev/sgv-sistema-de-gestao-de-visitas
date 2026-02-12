@@ -23,6 +23,41 @@
 
             </div>
 
+            <div class="bg-white my-10 rounded-lg border border-neutral-500/30 shadow-xl p-6">
+                <form action="{{ route('pessoa.index') }}" method="get">
+                    <h2 class="text-sky-950 font-bold text-xl mb-3"><i
+                            class="fa-solid fa-magnifying-glass text-sky-500"></i> Buscar Pessoas...</h2>
+                    
+                    <div class="flex items-end gap-3">
+                    <div class="flex items-end justify-between gap-3 flex-1 w-full">
+
+                        <div class="w-full">
+                            <div class="flex items-center gap-3 mb-1">
+                                <label for="nome_completo" class="text-sky-950 font-semibold">
+                                    Nome</label>
+                            </div>
+                            <input type="text" name="nome_completo"
+                                class="mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
+                        </div>
+
+                        <div class="w-full">
+                            <div class="flex items-center gap-3 mb-1">
+                                <label for="cpf" class="text-sky-950 font-semibold">
+                                    CPF</label>
+                            </div>
+                            <input type="text" name="cpf"
+                                class="cpf mb-1 w-full p-2 text-sky-950 font-semibold border border-neutral-500/20 bg-neutral-100 rounded-sm outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-500">
+                        </div>
+
+                    </div>
+
+                    <button type="submit"
+                        class="py-2 px-5 mb-1 text-[17px] font-semibold block text-white rounded-sm cursor-pointer bg-emerald-500"><i
+                            class="fa-solid fa-magnifying-glass mr-2"></i>Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+
             <div class="bg-white my-10 rounded-lg border border-neutral-500/30 shadow-xl">
                 <table class="w-full text-left">
                     <tr class="rounded-lg ">
@@ -42,7 +77,8 @@
                         {{-- <th
                             class="py-4 text-center uppercase text-sm text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
                             status atendimento</th> --}}
-                        <th class="py-4 uppercase text-center text-sm text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
+                        <th
+                            class="py-4 uppercase text-center text-sm text-neutral-600 border-b border-neutral-500/30 bg-neutral-100">
                             data cadastro</th>
                         <th
                             class=" py-4 text-center uppercase text-sm text-neutral-600 border-b border-neutral-500/30 bg-neutral-100 rounded-tr-lg">
@@ -86,7 +122,7 @@
 
                             <td class="py-4 border-b text-center border-neutral-500/30">
                                 {{ \Carbon\Carbon::parse($pessoa->data_cadastro)->format('d/m/Y') }}</td>
-                                
+
                             <td class="text-center font-semibold border-b border-neutral-500/30">
                                 <div class="flex items-center gap-3 justify-center">
                                     <a href="{{ route('pessoa.show', [$pessoa->id]) }}"

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePessoaRequest;
 use App\Http\Requests\UpdatePessoaRequest;
 use App\Models\Pessoa;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class PessoaController extends Controller
@@ -12,10 +13,9 @@ class PessoaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, UserService $user)
     {
-        $pessoas = Pessoa::orderBy('nome_completo', 'asc')->get();
-        return view('app.pessoa.index', ['pessoas' => $pessoas]);
+        return $user->UserQueryIndex($request);
     }
 
     /**
@@ -42,7 +42,7 @@ class PessoaController extends Controller
     {
         $pessoa = Pessoa::find($id);
 
-        if($pessoa == null){
+        if ($pessoa == null) {
             return redirect()->route('pessoa.index');
         }
 
@@ -56,7 +56,7 @@ class PessoaController extends Controller
     {
         $pessoa = Pessoa::find($id);
 
-        if($pessoa == null){
+        if ($pessoa == null) {
             return redirect()->route('pessoa.index');
         }
 
@@ -69,8 +69,8 @@ class PessoaController extends Controller
     public function update(UpdatePessoaRequest $request, string $id)
     {
         $pessoa = Pessoa::find($id);
-        
-        if($pessoa == null){
+
+        if ($pessoa == null) {
             return redirect()->route('pessoa.index');
         }
 
