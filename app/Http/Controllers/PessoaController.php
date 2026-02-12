@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePessoaRequest;
+use App\Http\Requests\UpdatePessoaRequest;
 use App\Models\Pessoa;
 use Illuminate\Http\Request;
 
@@ -65,9 +66,19 @@ class PessoaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePessoaRequest $request, string $id)
     {
-        //
+        $pessoa = Pessoa::find($id);
+        
+        if($pessoa == null){
+            return redirect()->route('pessoa.index');
+        }
+
+        // dd($request);
+
+        $pessoa->update($request->validated());
+
+        return redirect()->route('pessoa.show', ['id' => $id]);
     }
 
     /**

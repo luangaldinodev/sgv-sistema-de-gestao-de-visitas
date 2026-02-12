@@ -22,6 +22,7 @@ Route::controller(PessoaController::class)->group(function () {
     Route::get('/pessoa/{id}', 'show')->name('pessoa.show')->middleware(['auth']);
 
     Route::get('/pessoa/{id}/edit', 'edit')->name('pessoa.edit')->middleware(['auth', UserRulesMiddleware::class]);
+    Route::put('/pessoa/{id}', 'update')->name('pessoa.update')->middleware(['auth', UserRulesMiddleware::class]);
 
 });
 

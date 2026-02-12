@@ -29,9 +29,12 @@ class CpfRule implements ValidationRule
             return false;
         }
 
-        // Evita CPFs com todos os dígitos iguais
-        if (preg_match('/^(\d)\1{10}$/', $cpf)) {
-            return false;
+        // Caso o cidadão não saiba o CPF
+        if ($cpf !== '99999999999'){
+            // Evita CPFs com todos os dígitos iguais
+            if (preg_match('/^(\d)\1{10}$/', $cpf)) {
+                return false;
+            }
         }
 
         // Validação dos dígitos verificadores

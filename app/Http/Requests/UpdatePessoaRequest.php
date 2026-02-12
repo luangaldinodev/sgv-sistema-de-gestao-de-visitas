@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Rules\CpfRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePessoaRequest extends FormRequest
+class UpdatePessoaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,13 @@ class StorePessoaRequest extends FormRequest
     {
         return [
             'nome_completo' => 'required',
-            'cpf'  => ['required', new CpfRule()],
+            'cpf'  => ['string', new CpfRule()],
             'telefone' => 'required',
             'endereço' => 'required',
             'tipo_familia' => 'required',
             'tipo_cadastro' => 'required',
+            'data_cadastro' => '',
+            'observacoes' => '',
         ];
     }
 }

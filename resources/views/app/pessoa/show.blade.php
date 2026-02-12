@@ -31,10 +31,18 @@
 
                 <div class="col-span-3">
                     <div class="shadow-lg mb-6 rounded-lg">
+
+
                         <h3
-                            class="font-bold text-lg col-span-3 px-6 py-3 text-neutral-600 border border-neutral-500/30 rounded-t-lg">
-                            <i class="fa-solid fa-user text-sky-500"></i> Dados Pessoais
+                            class="font-bold flex items-center justify-between text-lg col-span-3 px-6 py-3 text-neutral-600 border border-neutral-500/30 rounded-t-lg">
+                            <div>
+                                <i class="fa-solid fa-user text-sky-500"></i> Dados Pessoais
+                            </div>
+
+                            <a href="{{ route('pessoa.edit', [$pessoa->id]) }}"
+                                class="py-2 px-4 font-semibold text-sky-500 text-sm rounded-sm cursor-pointer border border-sky-500 hover:shadow-lg hover:shadow-sky-100 transition-all ease-in-out"><i class="fa-solid fa-pen mr-2"></i>Editar Cadastro</a>
                         </h3>
+
 
                         <div
                             class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-white border-x border-b border-neutral-500/30 rounded-b-lg">
@@ -90,8 +98,8 @@
                             </div>
 
                             <div class="col-span-2 bg-neutral-100 px-6 py-4 rounded-lg border border-neutral-500/30">
-                                <p class="uppercase text-sm text-neutral-600 font-semibold">Endereço completo</p>
-                                <h2 class=" font-bold">{{ $pessoa->endereço }}</h2>
+                                <p class="uppercase text-sm text-neutral-600 font-semibold">Data de Vencimento</p>
+                                <h2 class=" font-bold">{{ \Carbon\Carbon::parse($pessoa->data_cadastro)->format('d/m/Y') }}</h2>
                             </div>
                         </div>
                     </div>
@@ -106,7 +114,8 @@
                         <div
                             class="grid grid-cols-4 gap-6 p-6 bg-white border-x border-b border-neutral-500/30 rounded-b-lg">
 
-                            <div class="col-span-4 bg-neutral-100 px-6 py-4 rounded-lg border-2 border-dashed border-neutral-500/30">
+                            <div
+                                class="col-span-4 bg-neutral-100 px-6 py-4 rounded-lg border-2 border-dashed border-neutral-500/30">
                                 <p class=" font-bold">{{ $pessoa->observacoes }}</p>
                             </div>
                         </div>
@@ -123,7 +132,7 @@
 
                     <div
                         class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-white border-x border-b border-neutral-500/30 rounded-b-lg">
-                        
+
                         @foreach ($pessoa->visita as $visitas)
                             <div class="col-span-4 border-b border-neutral-500/30 pb-3">
                                 <div class="flex items-center justify-between mb-1">

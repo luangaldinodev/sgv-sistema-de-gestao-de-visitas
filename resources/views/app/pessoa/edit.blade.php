@@ -6,12 +6,13 @@
 
     @include('app._components.header')
     <div class="">
-        <section class="w-5xl mx-auto bg-white mt-10 py-6 px-8 rounded-lg">
+        <section class="w-5xl mx-auto bg-white my-10 py-6 px-8 rounded-lg">
             <h2 class="text-sky-950 font-bold text-4xl">Atualizar Pessoa</h2>
 
-            <form action="{{ route('pessoa.store') }}" method="post"
-                class="grid grid-cols-4 gap-3 p-6 border border-neutral-500/20 rounded-lg mt-10">
+            <form action="{{ route('pessoa.update', ['id' => $pessoa->id]) }}" method="post"
+                class="grid grid-cols-4 gap-3 p-6 border border-neutral-500/20 rounded-lg my-10">
                 @csrf
+                @method('put')
 
                 <h3 class="text-sky-950 font-bold text-2xl col-start-1 col-end-4"><i
                         class="fa-solid fa-user text-sky-500"></i> Dados da Pessoa</h3>
