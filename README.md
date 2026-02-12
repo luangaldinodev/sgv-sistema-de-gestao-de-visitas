@@ -1,10 +1,10 @@
 <p align="center"><img src="public/assets/img/logo.png" width="300"></p>
 
-# SGV-CadÚnico
+# SGV-Sistema de Gestão de Visitas
 
-## Sistema de Gestão de Visitas Domiciliares do CadÚnico
+## Sistema de Gestão de Visitas Domiciliares
 
-O **SGV-CadÚnico** é um sistema web desenvolvido para apoiar a organização, o controle e o acompanhamento das **visitas domiciliares exigidas pelo CadÚnico**, especialmente após o decreto federal de 2025 que tornou obrigatória a visita para cadastros unipessoais.
+O **SGV-Sistema de Gestão de Visitas** é um sistema web desenvolvido para apoiar a organização, o controle e o acompanhamento das **visitas domiciliares exigidas pelo CadÚnico(MDS)**, especialmente após o decreto federal de 2025 que tornou obrigatória a visita para cadastros unipessoais.
 
 O sistema foi idealizado a partir de uma necessidade real vivenciada em ambiente público, onde o controle era feito por planilhas compartilhadas em rede, sujeitas a conflitos de acesso, perda de dados e dificuldades logísticas.
 
@@ -13,7 +13,7 @@ O sistema foi idealizado a partir de uma necessidade real vivenciada em ambiente
 
 Atualmente, unidades de atendimento como o CRAS realizam cadastros e atualizações do CadÚnico. Com a obrigatoriedade de visitas domiciliares para determinados perfis, surgiu a necessidade de um controle mais eficiente das demandas, responsáveis e status das visitas.
 
-O SGV-CadÚnico surge como uma solução para **centralizar essas informações em um sistema web**, permitindo acesso simultâneo por múltiplos usuários e garantindo integridade dos dados.
+O SGV-Sistema de Gestão de Visitas surge como uma solução para **centralizar essas informações em um sistema web**, permitindo acesso simultâneo por múltiplos usuários e garantindo integridade dos dados.
 
 
 ## 🎯 Objetivo
@@ -29,7 +29,6 @@ Centralizar e organizar o registro e acompanhamento das visitas domiciliares do 
 * Registro e agendamento de visitas domiciliares
 * Atribuição de responsáveis
 * Controle de status das visitas
-* Histórico de atendimentos e visitas
 * Listagens com filtros por status, responsável e período
 
 
@@ -52,7 +51,7 @@ Centralizar e organizar o registro e acompanhamento das visitas domiciliares do 
 
 ## 🏛️ Observação institucional
 
-O SGV-CadÚnico **não é um sistema oficial do Governo Federal**.
+O SGV-Sistema de Gestão de Visitas **não é um sistema oficial do Governo Federal**.
 
 Trata-se de um projeto educacional e de portfólio, desenvolvido com base em experiências reais vivenciadas em unidades de atendimento do CadÚnico, com o objetivo de estudo, demonstração técnica e melhoria de processos.
 
@@ -70,7 +69,7 @@ Trata-se de um projeto educacional e de portfólio, desenvolvido com base em exp
 Clone o repositório
 
 ```bash
-  git clone https://github.com/luangaldinodev/CRUD-laravel-Galdino.git
+  git clone https://github.com/luangaldinodev/sgv-sistema-de-gestao-de-visitas.git
   cd CRUD-laravel-Galdino
 ```
 
@@ -107,7 +106,7 @@ Configurar o banco de dados
 Rodar as migrations
 
 ```bash
-  php artisan migrate
+  php artisan migrate --seed
 ```
 
 Instalar dependências front-end
@@ -128,23 +127,6 @@ Acesse:
 ```bash
   http://127.0.0.1:8000
 ```
-
-## Documentação Técnica
-
-Acesse a rota:
-
-```bash
-  http://127.0.0.1:8000/docs
-```
-
-Aqui você encontrara todas as rotas disponíveis e uma exibição da estrutura das tabelas do banco de dados.
-
-## Referência e Documentações
-
- - [Laravel Docs](https://laravel.com/docs/12.x)
- - [AOS Animate On Scroll Library](https://michalsnik.github.io/aos/)
- - [Tailwind CSS](https://tailwindcss.com/)
-
 
 ## Suporte e Feedback
 
