@@ -10,8 +10,10 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="shortcut icon" href="{{ asset('assets/img/icon.png') }}" type="image/x-icon">
+
     <title>@yield('titulo') | SGV - CadÚnico</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="bg-neutral-100">
@@ -19,6 +21,21 @@
 
     {{-- Menu DropDown Header --}}
     <script>
+        function confirmarExclusao() {
+            swal({
+                    title: "Você tem certeza?",
+                    text: "Uma vez apagado, você não poderá recuperar esse registro!",
+                    icon: "warning",
+                    buttons: ["Cancelar", true],
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        document.getElementById('formDelete').submit();
+                    } 
+                });
+        }
+
         function menuDropDown() {
 
             const menuDropDown = document.getElementById('menuDropDown');
