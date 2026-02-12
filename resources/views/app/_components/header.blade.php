@@ -12,9 +12,10 @@
         <div class="text-sky-950 font-semibold flex flex-col items-end">
             <p onclick="menuDropDown()" class="cursor-pointer hover:underline"><i class="fa-solid fa-user"></i> {{ auth()->user()?->name }}</p>
             <form id="menuDropDown" action="{{ route('logout') }}" method="post" class="absolute hidden shadow-lg rounded-md bg-white border border-neutral-500/50 py-2 px-5 mt-8">
-                <a href="#" class="hover:underline"><i class="fa-solid fa-gear"></i> Ajustes</a>
+                {{-- <a href="#" class="hover:underline"><i class="fa-solid fa-gear"></i> Ajustes</a> --}}
                 @csrf
-                <div class="mt-2">
+                {{-- class="mt-2" --}}
+                <div class="">
                     <i class="fa-solid fa-arrow-right-from-bracket"></i>
                     <input type="submit" value="Logout" class="hover:underline cursor-pointer">
                 </div>

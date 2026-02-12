@@ -15,10 +15,10 @@
                 <ul class="flex flex-col items-start gap-6 text-sky-950 font-medium">
                     <h1 class="text-sky-950 text-2xl font-bold">Contato</h1>
                     <li><i class="fa-solid fa-envelope"></i> <a class="text-sky-950 font-medium hover:underline"
-                            href="#">sgvcadunico@gmail.com</a></li>
+                            href="#">sistemagestaovisitas@gmail.com</a></li>
                     <li><i class="fa-brands fa-instagram"></i> <a class="text-sky-950 font-medium hover:underline"
                             href="#" target="_blank"
-                            rel="noopener noreferrer">sgvcadunico</a></li>
+                            rel="noopener noreferrer">sistemagestaovisitas</a></li>
                 </ul>
             </nav>
             <p class="text-center text-sky-950 font-semibold text-lg mb-2 mt-6">&copy; SGV - Sistema de Gestão de Visitas • Todos os
