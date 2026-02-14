@@ -12,7 +12,7 @@
             <div class="mt-10 flex items-center justify-between">
                 <div>
                     <h2 class="text-sky-950 font-bold text-4xl">Detalhes da Visita</h2>
-                    <p class="text-neutral-600 font-semibold"><a href="{{ route('visita.index') }}" class="hover:underline">visitas</a> / detalhes da visita</p>
+                    <p class="text-neutral-600 font-semibold"><a href="{{ route('visita.index') }}" class="hover:underline">Visitas</a> / Detalhes da Visita</p>
                 </div>
 
                 <div class="flex items-center gap-6">

@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $visitasPendentes = VisitaDomiciliar::where('status_visita', 'Pendente')->count();
-        $visitasRealizadas = VisitaDomiciliar::where('status_visita', 'Ralizadas')->count();
+        $visitasRealizadas = VisitaDomiciliar::where('status_visita', 'Realizada')->count();
         $visitasNaoLocalizados = VisitaDomiciliar::where('status_visita', 'Não Localizado')->count();
         $totalPessoas = Pessoa::count();
     

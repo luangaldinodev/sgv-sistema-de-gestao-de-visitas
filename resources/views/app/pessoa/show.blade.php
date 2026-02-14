@@ -12,8 +12,7 @@
             <div class="mt-10 flex items-center justify-between">
                 <div>
                     <h2 class="text-sky-950 font-bold text-4xl">Detalhes do Cadastro</h2>
-                    <p class="text-neutral-600 font-semibold">Código Familiar / NIS: 132154354
-                    </p>
+                    <p class="text-neutral-600 font-semibold"><a href="{{ route('pessoa.index') }}" class="hover:underline">Pessoas</a> / Detalhes do Cadastro</p>
                 </div>
 
                 <div class="flex items-center gap-6">
@@ -134,7 +133,7 @@
                         class="col-start-1 col-end-4 grid grid-cols-4 gap-6 p-6 bg-white border-x border-b border-neutral-500/30 rounded-b-lg">
 
                         @foreach ($pessoa->visita as $visitas)
-                            <div class="col-span-4 border-b border-neutral-500/30 pb-3">
+                            <a href="{{ route('visita.show', [$visitas->id]) }}" class="col-span-4 border-b border-neutral-500/30 pb-3 hover:underline">
                                 <div class="flex items-center justify-between mb-1">
                                     <p class="uppercase text-sm text-neutral-600 font-semibold">Status da visita</p>
                                     <p class="text-neutral-600 text-sm font-semibold">
@@ -154,7 +153,7 @@
 
                                 <p class="text-neutral-600 text-sm font-semibold">Responsável pela Visita:
                                     {{ $visitas->entrevistador->name }}</p>
-                            </div>
+                            </a>
                         @endforeach
 
                     </div>

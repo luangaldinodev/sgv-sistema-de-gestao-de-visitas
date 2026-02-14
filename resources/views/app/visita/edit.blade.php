@@ -83,7 +83,7 @@
                 <div class="col-span-4">
                     <div class="flex items-center gap-3 mb-1">
                         <label for="" class="text-sky-950 font-semibold">
-                            Tipo de familía</label>
+                            </label>
                         {!! $errors->has('tipo_familia')
                             ? "<p class='text-sm text-red-700'>*" . $errors->first('tipo_familia') . '</p>'
                             : '' !!}
