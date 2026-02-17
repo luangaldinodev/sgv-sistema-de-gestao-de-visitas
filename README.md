@@ -35,7 +35,7 @@ Centralizar e organizar o registro e acompanhamento das visitas domiciliares do 
 ## 🔄 Fluxo de uso
 
 1. Atendimento inicial registra a pessoa no sistema
-2. Sistema identifica necessidade de visita domiciliar
+2. Usuário de nível administrativo identifica necessidade de visita domiciliar
 3. Entrevistadores organizam e realizam as visitas
 4. Após a visita, o status é atualizado no sistema
 5. Registro permanece armazenado para consulta futura
@@ -64,13 +64,13 @@ Trata-se de um projeto educacional e de portfólio, desenvolvido com base em exp
 * Demonstração de resolução de problemas reais
 
 
-## ⚙ Instalação e Rodando localmente
+## ⚙ Instalação
 
 Clone o repositório
 
 ```bash
   git clone https://github.com/luangaldinodev/sgv-sistema-de-gestao-de-visitas.git
-  cd CRUD-laravel-Galdino
+  cd sgv-sistema-de-gestao-de-visitas
 ```
 
 Instalar dependências do PHP
@@ -85,55 +85,55 @@ Criar o arquivo .env
   cp .env.example .env
 ```
 
-Gerar a chave da aplicação
+Subir o container via Sail
 
 ```bash
-  php artisan key:generate
+  ./vendor/bin/sail up
 ```
 
-Configurar o banco de dados
+Verifique as variáveis de ambiente geradas pelo Sail
 
 ```env
   DB_CONNECTION=mysql
-  DB_HOST=127.0.0.1
+  DB_HOST=mysql
   DB_PORT=3306
-  DB_DATABASE=nome_do_banco
-  DB_USERNAME=usuario
-  DB_PASSWORD=senha
+  DB_DATABASE=sgv
+  DB_USERNAME=sail
+  DB_PASSWORD=password
 ```
-**Certifique-se de que o banco de dados já exista.**
 
 Rodar as migrations
 
 ```bash
-  php artisan migrate --seed
+  ./vendor/bin/sail artisan migrate --seed
+```
+
+Gerar a chave da aplicação
+
+```bash
+  ./vendor/bin/sail artisan key:generate
 ```
 
 Instalar dependências front-end
 
 ```bash
-  npm install
-  npm run dev
+  ./vendor/bin/sail npm install
 ```
 
-Iniciar o servidor
+Iniciar ambiente de desenvolvimento ou build do front-end
 
 ```bash
-  php artisan serve
-```
-
-Acesse:
-
-```bash
-  http://127.0.0.1:8000
+  ./vendor/bin/sail npm run dev
+  ./vendor/bin/sail npm run build
 ```
 
 ## Suporte e Feedback
 
-Para suporte, mande um email para luangaldinodev@gmail.com ou entre em meu instagram [@ogaldino.dev](https://www.instagram.com/ogaldino.dev/).
+Para suporte, mande um email para luangaldinodev@gmail.com ou entre em contato em meu instagram [@ogaldino.dev](https://www.instagram.com/ogaldino.dev/).
 
 ---
-Desenvolvido como projeto de estudo e portfólio.
+
+**Desenvolvido como projeto de estudo e portfólio.**
 
 ---
 
